@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <li><a href="/">home</a></li>
+        <li><a href="/myRecords">my records</a></li>
+    </header>
+    <%data.forEach(item=>{%>
+        <p>
+            Country :<%=item.country %>
+        </p>
+        <p>
+            Date:<%=item.date %>
+        </p>
+        <form action="/recordDetails/<%=item.id%> " method="GET">
+        <input type="hidden" name="country" value="<%=item.country %>">
+        <input type="hidden" name="totalconfirmed" value="<%=item.totalconfirmed %>">
+        <input type="hidden" name="totaldeath" value="<%=item.totaldeath %>">
+        <input type="hidden" name="totalrecovered" value="<%=item.totalrecovered %>">
+        <input type="hidden" name="date" value="<%=item.date %>">
+        <input type="submit"  value="View Deatails">
+
+        </form>
+        <% }) %>
+
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <li><a href="/allcountries"> All Countries</a></li>
+        <li><a href="/myRecords">my records</a></li>
+    </header>
+    <p> Total Confirmed :<%=data.TotalConfirmed %>
+    </p>
+    <p>Total Deaths :<%=data.TotalDeaths %>
+    </p>
+    <p>Total Recovered :<%=data.TotalRecovered %>
+    </p>
+    <form action="/gitonecity" method="GET">
+        <input type="text" name="city">
+        <input type="date" name="from">
+        <input type="date" name="to">
+        <input type="submit" value="search">
+    </form>
+</body>
+
+</html>

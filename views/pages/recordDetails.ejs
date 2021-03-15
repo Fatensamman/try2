@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <li><a href="/">home</a></li>
+        <li><a href="/myRecords">my records</a></li>
+    </header>
+    <p>
+        Country :<%=item.country %>
+    </p>
+    <p>
+        Total Confirmed Cases:<%=item.totalconfirmed %>
+    </p>
+    <p>
+        Total Deaths Cases :<%=item.totaldeath %>
+    </p>
+    <p>
+        Total Recovered Cases :<%=item.totalrecovered %>
+    </p>
+    <p>
+        Date:<%=item.date %>
+    </p>
+    <form action="/update/<%=item.id%>?_method=put " method="POST">
+        <input type="text" name="country" value="<%=item.country %>">
+        <input type="text" name="totalconfirmed" value="<%=item.totalconfirmed %>">
+        <input type="number" name="totaldeath" value="<%=item.totaldeath %>">
+        <input type="number" name="totalrecovered" value="<%=item.totalrecovered %>">
+        <input type="text" name="date" value="<%=item.date %>">
+        <input type="submit" value="update">
+
+    </form>
+    <form action="/delete/<%=item.id%>?_method=delete" method="POST">
+        <input type="submit" value="delete">
+    </form>
+
+
+</body>
+
+</html>
